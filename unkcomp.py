@@ -30,7 +30,7 @@ def compileCode(file, output):
     with open(file, "r") as f:
         code = f.read()
     
-    outputCcode = model.generate_content("""you can compile a code from an unknown language to the C language. if the main functions don't exist, you can create it, and if the language doesn't have static typing, you can add it. if the language code is in portuguese, you can translate to english
+    outputCcode = model.generate_content("""you can compile a code from an unknown language to the C language. if the main functions don't exist, you can create it, and if the language doesn't have static typing, you can add it. if the language code is in other language, you can translate to english
 you compile the code and show the output like this:
                                          
 ```c
