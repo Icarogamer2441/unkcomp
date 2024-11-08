@@ -24,7 +24,7 @@ else:
 
 genai.configure(api_key=api_key)
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-1.5-pro")
 
 def compileCode(file, output):
     with open(file, "r") as f:
@@ -39,7 +39,7 @@ you compile the code and show the output like this:
 
 don't say nothing, only send the code like i showed. my code to you compile: ```unknownlang
 {}
-```""".format(code))
+```""".format(code), generation_config=genai.GenerationConfig(max_output_tokens=500000))
     outputcode = "\n".join(outputCcode.text.split("\n")[1:-1])
     with open(output, "w") as out:
         out.write(outputcode)
